@@ -11,6 +11,7 @@ import { ListProductComponent } from './components/Product/list-product/list-pro
 import { AddProductComponent } from './components/Product/add-product/add-product.component';
 import { AddUserComponent } from './components/User/add-user/add-user.component';
 import { AddConsumerComponent } from './components/Consumer/add-consumer/add-consumer.component';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AddConsumerComponent } from './components/Consumer/add-consumer/add-con
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
