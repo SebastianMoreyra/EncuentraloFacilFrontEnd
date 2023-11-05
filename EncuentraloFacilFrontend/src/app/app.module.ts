@@ -12,6 +12,9 @@ import { AddProductComponent } from './components/Product/add-product/add-produc
 import { AddUserComponent } from './components/User/add-user/add-user.component';
 import { AddConsumerComponent } from './components/Consumer/add-consumer/add-consumer.component';
 
+import { MaterialModule } from './material.module';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +29,9 @@ import { AddConsumerComponent } from './components/Consumer/add-consumer/add-con
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MaterialModule,
+    HttpClientModule/////////principal
   ],
   providers: [],
   bootstrap: [AppComponent]
