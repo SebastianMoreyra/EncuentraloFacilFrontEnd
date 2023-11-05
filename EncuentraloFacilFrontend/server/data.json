@@ -1,0 +1,58 @@
+{
+  "user": [
+    {
+            "username": "user05",
+            "password": "user012345",
+            "firstname": "TadashiADMIN",
+            "lastname": "BuitronADMIN",
+            "country": "Peru"
+    }
+  ],
+  "seller": [
+    {
+      "name": "NombreVendedor4",
+      "store": 123,
+      "storeDescription": "Tiendita4",
+      "storeLocation": "cerca4",
+      "user": {
+          "id": 1,
+          "username": "user05",
+          "password": "user012345",
+          "firstname": "TadashiADMIN",
+          "lastname": "BuitronADMIN",
+          "country": "Peru",
+          "role": "ADMIN"
+      }
+    }
+  ],
+  "Product":[
+    {
+      "price": 7.0,
+      "brand":"OttoC" ,
+      "category":"Enbutido",
+      "expiration_date": "2024-09-17",
+      "seller": {
+          "id": 1,
+          "name": "Vendedor2",
+          "store": 123,
+          "storeDescription": "Tiendita2",
+          "storeLocation": "cerca2"
+      }
+    }
+  ],
+  "Consumer":[
+    {
+      "name": "ConsumidorApoloni",
+      "user": {
+          "id": 2,
+          "username": "user03",
+          "password": "user01235",
+          "firstname": "Alejandroa",
+          "lastname": "Apoloni",
+          "country": "Peru",
+          "role": "USER"
+      }
+  }
+]
+
+}
