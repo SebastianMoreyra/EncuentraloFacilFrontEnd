@@ -1,6 +1,7 @@
 {
   "user": [
     {
+      "id":1,
             "username": "user05",
             "password": "user012345",
             "firstname": "TadashiADMIN",
@@ -10,6 +11,7 @@
   ],
   "seller": [
     {
+      "id":1,
       "name": "NombreVendedor4",
       "store": 123,
       "storeDescription": "Tiendita4",
@@ -34,15 +36,16 @@
       "expiration_date": "2024-09-17",
       "seller": {
           "id": 1,
-          "name": "Vendedor2",
+          "name": "NombreVendedor4",
           "store": 123,
-          "storeDescription": "Tiendita2",
-          "storeLocation": "cerca2"
+          "storeDescription": "Tiendita4",
+          "storeLocation": "cerca4"
       }
     }
   ],
   "Consumer":[
     {
+      "id":1,
       "name": "ConsumidorApoloni",
       "user": {
           "id": 2,
@@ -55,5 +58,4 @@
       }
   }
 ]
-
 }
