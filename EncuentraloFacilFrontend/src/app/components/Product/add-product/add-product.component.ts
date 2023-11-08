@@ -48,7 +48,7 @@ export class AddProductComponent {
     }
   }
 
-  addAuto() {
+  addProduct() {
     //this._tax = this.myForm.get('price')!.value * 0.18
 
     const product: Product = {

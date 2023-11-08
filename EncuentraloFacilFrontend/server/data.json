@@ -1,61 +1,68 @@
 {
   "user": [
     {
-      "id":1,
-            "username": "user05",
-            "password": "user012345",
-            "firstname": "TadashiADMIN",
-            "lastname": "BuitronADMIN",
-            "country": "Peru"
+      "id": 1,
+      "username": "user05",
+      "password": "user012345",
+      "firstname": "TadashiADMIN",
+      "lastname": "BuitronADMIN",
+      "country": "Peru"
     }
   ],
   "seller": [
     {
-      "id":1,
+      "id": 1,
       "name": "NombreVendedor4",
       "store": 123,
       "storeDescription": "Tiendita4",
       "storeLocation": "cerca4",
       "user": {
-          "id": 1,
-          "username": "user05",
-          "password": "user012345",
-          "firstname": "TadashiADMIN",
-          "lastname": "BuitronADMIN",
-          "country": "Peru",
-          "role": "ADMIN"
+        "id": 1,
+        "username": "user05",
+        "password": "user012345",
+        "firstname": "TadashiADMIN",
+        "lastname": "BuitronADMIN",
+        "country": "Peru",
+        "role": "ADMIN"
       }
     }
   ],
-  "Product":[
+  "Product": [
     {
-      "id":1,
-      "price": 7.0,
-      "brand":"OttoC" ,
-      "category":"Enbutido",
+      "id": 1,
+      "price": 7,
+      "brand": "OttoC",
+      "category": "Enbutido",
       "expiration_date": "2024-09-17",
       "seller": {
-          "id": 1,
-          "name": "NombreVendedor4",
-          "store": 123,
-          "storeDescription": "Tiendita4",
-          "storeLocation": "cerca4"
+        "id": 1,
+        "name": "NombreVendedor4",
+        "store": 123,
+        "storeDescription": "Tiendita4",
+        "storeLocation": "cerca4"
       }
+    },
+    {
+      "id": 2,
+      "price": 18,
+      "brand": "Costenio",
+      "category": "Arroz",
+      "expiration_date": "2024-12-24T05:00:00.000Z"
     }
   ],
-  "Consumer":[
+  "Consumer": [
     {
-      "id":1,
+      "id": 1,
       "name": "ConsumidorApoloni",
       "user": {
-          "id": 2,
-          "username": "user03",
-          "password": "user01235",
-          "firstname": "Alejandroa",
-          "lastname": "Apoloni",
-          "country": "Peru",
-          "role": "USER"
+        "id": 2,
+        "username": "user03",
+        "password": "user01235",
+        "firstname": "Alejandroa",
+        "lastname": "Apoloni",
+        "country": "Peru",
+        "role": "USER"
       }
-  }
-]
+    }
+  ]
 }
