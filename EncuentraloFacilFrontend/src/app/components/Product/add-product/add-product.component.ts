@@ -56,7 +56,6 @@ export class AddProductComponent {
       price: this.myForm.get('price')!.value,
       brand: this.myForm.get('brand')!.value,
       category: this.myForm.get('category')!.value,
-      //expiration_date: new Date()
       expiration_date: this.myForm.get('expiration_date')!.value,
     }
     if (this._id == 0 || this._id == undefined) {
