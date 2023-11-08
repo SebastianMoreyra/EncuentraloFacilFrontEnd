@@ -3,5 +3,6 @@ export interface Product {
   price: number
   category: string
   brand: string
-  expiration_date: Date
+  //expiration_date: Date
+  expiration_date: string
 }

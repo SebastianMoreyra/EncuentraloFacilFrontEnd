@@ -16,7 +16,7 @@ import { DialogComponent } from 'src/app/dialog/dialog.component';
 export class ListProductComponent {
   [x: string]: any;
 
-  displayedColumns: string[] = ['id', 'brand', 'price','expirationDate', 'actions']
+  displayedColumns: string[] = ['id', 'brand', 'price','expiration_date', 'actions']
 
   dataSource = new MatTableDataSource<Product>()
 
