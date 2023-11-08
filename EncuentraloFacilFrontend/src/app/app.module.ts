@@ -13,6 +13,8 @@ import { AddUserComponent } from './components/User/add-user/add-user.component'
 import { AddConsumerComponent } from './components/Consumer/add-consumer/add-consumer.component';
 import { MaterialModule } from './material.module';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,8 @@ import { MaterialModule } from './material.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
