@@ -3,6 +3,16 @@
 
   <button mat-raised-button style="background-color: #88DC65;" color="primary" [routerLink]="'/addProduct'">Add Product</button>
    <br>
+
+   <mat-card-header>
+    <div>
+      <mat-form-field appearance="fill" class="Buscador">
+        <mat-label>Buscar por Categoría</mat-label>
+        <input matInput #input (keyup)="filterProductbyCategory(input.value)" />
+      </mat-form-field>
+    </div>
+  </mat-card-header>
+
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.

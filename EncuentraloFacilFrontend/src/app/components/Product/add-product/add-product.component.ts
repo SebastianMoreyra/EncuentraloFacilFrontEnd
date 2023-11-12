@@ -65,7 +65,7 @@ export class AddProductComponent {
           this.snackBar.open('Producto creado correctamente', '', {
             duration: 3000
           })
-          this.router.navigate(['/listProduct'])
+          this.router.navigate(['/list'])
         },
         error: (err) => {
           console.log(err)

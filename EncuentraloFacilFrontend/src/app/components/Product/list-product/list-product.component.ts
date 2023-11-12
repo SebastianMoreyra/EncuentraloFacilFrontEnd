@@ -80,7 +80,7 @@ export class ListProductComponent {
           duration: 3000
        })
       this.getProducts()
-      this.router.navigate(['/listProduct'])
+      this.router.navigate(['/api/product/list'])
     },
     error: (err) => {
       console.log(err)
