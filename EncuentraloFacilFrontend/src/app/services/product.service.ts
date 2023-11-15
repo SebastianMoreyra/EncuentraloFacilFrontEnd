@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from '../models/Product';
 
-//const base_url = "http://localhost:8080/api/product"
-const base_url = "http://localhost:3000/Product"
+const base_url = "http://localhost:8080/api/product"
+//const base_url = "http://localhost:3000/Product"
 @Injectable({
   providedIn: 'root'
 })
@@ -12,7 +12,7 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   getProducts(){
-    const endpoint = `${base_url}/`;
+    const endpoint = `${base_url}`;
     return this.http.get<Product[]>(endpoint)
   }
   getProductosById(id: any) {

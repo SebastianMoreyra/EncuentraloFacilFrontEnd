@@ -7,7 +7,9 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "backend": "json-server --watch server/data.json",
-    "test": "ng test"
+    "test": "ng test",
+    "target": "http://localhost:8080",
+    "secure": false
   },
   "private": true,
   "dependencies": {

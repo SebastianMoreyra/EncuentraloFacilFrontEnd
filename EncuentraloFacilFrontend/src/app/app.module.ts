@@ -13,8 +13,10 @@ import { AddUserComponent } from './components/User/add-user/add-user.component'
 import { AddConsumerComponent } from './components/Consumer/add-consumer/add-consumer.component';
 import { MaterialModule } from './material.module';
 
-import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthInterceptor } from './helpers/auth.interceptor';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ListProductComponent,
     AddProductComponent,
     AddUserComponent,
-    AddConsumerComponent
+    AddConsumerComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -34,8 +37,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     MaterialModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
