@@ -1,1 +1,108 @@
-<p>add-product works!</p>
+<mat-card>
+  <h2>Add Product</h2>
+
+<form [formGroup]="myForm" autocomplete="off">
+
+<mat-form-field>
+      <input
+        matInput
+        type="number"
+        placeholder="Price"
+        formControlName="price"
+        required
+      />
+    </mat-form-field>
+    <div
+    *ngIf="
+      myForm.get('price')?.hasError('required') &&
+      myForm.get('price')?.touched
+    "
+    style="margin-top: -20px"
+  >
+    <span class="mda-form-msg"> Este campo es obligatorio </span>
+  </div>
+
+  <div class="product-container">
+    <mat-form-field>
+      <input
+      matInput
+      placeholder="Brand"
+      formControlName="brand"
+      required />
+    </mat-form-field>
+    <div
+    *ngIf="
+      myForm.get('brand')?.hasError('required') &&
+      myForm.get('brand')?.touched
+    "
+    style="margin-top: -20px"
+  >
+    <span class="mda-form-msg"> Este campo es obligatorio </span>
+  </div>
+
+  <mat-form-field>
+    <input
+    matInput
+    placeholder="Category"
+    formControlName="category"
+    required />
+  </mat-form-field>
+  <div
+  *ngIf="
+    myForm.get('category')?.hasError('required') &&
+    myForm.get('category')?.touched
+  "
+  style="margin-top: -20px"
+>
+  <span class="mda-form-msg"> Este campo es obligatorio </span>
+</div>
+
+<mat-form-field>
+  <input matInput [matDatepicker]="picker" placeholder="expiration Date" formControlName="expiration_date" required />
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+<div
+*ngIf="
+  myForm.get('expiration_date')?.hasError('required') &&
+  myForm.get('expiration_date')?.touched
+"
+style="margin-top: -20px"
+>
+<span class="mda-form-msg"> Este campo es obligatorio </span>
+</div>
+
+
+</div>
+
+
+<div>
+  <button class="button"
+  mat-raised-button
+  color="primary"
+  [disabled]="myForm.invalid"
+  type="button"
+  style="margin-left: 10 px"
+  (click)="addProduct()"
+>
+
+  Ok
+</button>
+
+<button class="button"
+mat-raised-button
+color="warn"
+type="button"
+routerLink="/listProduct"
+>
+Cancel
+</button>
+
+
+
+
+
+  </div>
+
+</form>
+</mat-card>

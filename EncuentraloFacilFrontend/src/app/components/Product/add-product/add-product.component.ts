@@ -48,7 +48,7 @@ export class AddProductComponent {
     }
   }
 
-  addAuto() {
+  addProduct() {
     //this._tax = this.myForm.get('price')!.value * 0.18
 
     const product: Product = {
@@ -56,7 +56,6 @@ export class AddProductComponent {
       price: this.myForm.get('price')!.value,
       brand: this.myForm.get('brand')!.value,
       category: this.myForm.get('category')!.value,
-      //expiration_date: new Date()
       expiration_date: this.myForm.get('expiration_date')!.value,
     }
     if (this._id == 0 || this._id == undefined) {
@@ -66,7 +65,7 @@ export class AddProductComponent {
           this.snackBar.open('Producto creado correctamente', '', {
             duration: 3000
           })
-          this.router.navigate(['/listProduct'])
+          this.router.navigate(['/list'])
         },
         error: (err) => {
           console.log(err)

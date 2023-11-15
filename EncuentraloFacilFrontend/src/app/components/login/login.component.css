@@ -1,0 +1,29 @@
+
+/* Estilo para el formulario */
+.form-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el botón de ingreso */
+.btn-primary {
+  background-color: #1976D2;
+  color: #ffffff;
+}
+
+/* Estilo para el contenedor principal */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Ajustes adicionales para el diseño responsivo si es necesario */
+@media (max-width: 600px) {
+  .form-container {
+    max-width: 100%;
+  }
+}

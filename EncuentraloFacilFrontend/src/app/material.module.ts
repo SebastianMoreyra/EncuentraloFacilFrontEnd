@@ -14,6 +14,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatCommonModule, MatNativeDateModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+//import { FormsModule } from '@angular/forms';
+
+
 @NgModule({
   declarations: [],
   imports: [
@@ -31,7 +37,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DialogModule,
     MatDialogModule,
     BrowserAnimationsModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    MatCommonModule
 
 
 
