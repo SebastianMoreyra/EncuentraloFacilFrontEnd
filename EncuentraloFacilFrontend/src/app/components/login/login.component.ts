@@ -27,7 +27,7 @@ export class LoginComponent {
 
     this.apiService.login(this.creds)
     .subscribe(response => {
-      this.router.navigate(['/list']);
+      this.router.navigate(['/']);
 
     })
   }

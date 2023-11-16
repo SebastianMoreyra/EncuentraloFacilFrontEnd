@@ -6,7 +6,9 @@ import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './helpers/auth.guard';
 
 const routes: Routes = [
+  //{path: 'list', component: ListProductComponent},
   {path: 'list', component: ListProductComponent,canActivate:[AuthGuard]},
+  //{path: '', component: ListProductComponent,canActivate:[AuthGuard]},
   {path: 'addProduct', component: AddProductComponent},
   {path: 'editProduct/:id', component: AddProductComponent},
   {path: 'auth/login', component: LoginComponent},
