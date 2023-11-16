@@ -27,6 +27,12 @@ export class ApiService {
     return localStorage.getItem('token');
   }
 
+  logout() {
+    localStorage.removeItem('token');
+  }
+
+
+
 
 
 }

@@ -12,6 +12,7 @@ const routes: Routes = [
   {path: 'addProduct', component: AddProductComponent},
   {path: 'editProduct/:id', component: AddProductComponent},
   {path: 'auth/login', component: LoginComponent},
+  //{path: 'close', component: LoginComponent},
 
 ];
 

@@ -27,8 +27,13 @@ export class LoginComponent {
 
     this.apiService.login(this.creds)
     .subscribe(response => {
-      this.router.navigate(['/']);
+      this.router.navigate(['/list']);
 
     })
+  }
+
+  logout(form: NgForm){
+    console.log ('form value', form.value);
+    this.apiService.logout()
   }
 }
