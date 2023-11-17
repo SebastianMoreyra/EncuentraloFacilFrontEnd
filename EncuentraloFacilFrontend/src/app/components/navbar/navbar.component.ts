@@ -20,4 +20,5 @@ export class NavbarComponent {
       this.apiService.logout()
       this.router.navigate(['auth/login']);
     }
+
 }

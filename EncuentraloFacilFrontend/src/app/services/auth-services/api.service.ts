@@ -41,7 +41,7 @@ export class ApiService {
     }
 
     const decodedToken = this.jwtHelper.decodeToken(token);
-    //console.log('Token:', token);
+    console.log('Token:', token);
 
     // Supongamos que los roles están almacenados en el campo 'roles' del token
     return decodedToken && decodedToken.role ? decodedToken.role : [];
