@@ -1,3 +1,5 @@
+import { Seller } from "./Seller"
+
 export interface Product {
   id: number
   price: number
@@ -5,4 +7,5 @@ export interface Product {
   brand: string
   //expiration_date: Date
   expiration_date: string
+  seller: Seller
 }

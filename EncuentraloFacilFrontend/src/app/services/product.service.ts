@@ -29,11 +29,11 @@ export class ProductService {
     return this.http.get<Product>(endpoint)
   }
   saveProduct(body: any) {
-    const endpoint = `${base_url}/`;
+    const endpoint = `${base_url}/addProduct`;
     return this.http.post<Product>(endpoint, body)
   }
   deleteProduct(id: any) {
-    const endpoint = `${base_url}/${id}`;
+    const endpoint = `${base_url}/delete/${id}`;
     return this.http.delete<Product>(endpoint)
 
   }

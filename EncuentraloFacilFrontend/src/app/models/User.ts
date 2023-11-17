@@ -1,9 +1,10 @@
 export interface User {
   id: number
   //username: String
-  lastname: string
-  firstname: string
-  country: string
+  lastname: String
+  firstname: String
+  country: String
+  role: String
   //password: String
 }
 

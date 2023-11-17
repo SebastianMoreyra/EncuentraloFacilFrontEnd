@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { Product } from 'src/app/models/Product';
 import { ProductService } from 'src/app/services/product.service';
 import { DialogComponent } from 'src/app/dialog/dialog.component';
+import { ApiService } from 'src/app/services/auth-services/api.service';
 
 @Component({
   selector: 'app-list-product',
@@ -15,6 +16,8 @@ import { DialogComponent } from 'src/app/dialog/dialog.component';
 })
 export class ListProductComponent {
   [x: string]: any;
+
+  userRoles: string[] = [];
 
   displayedColumns: string[] = ['id', 'brand','category', 'price','expiration_date', 'actions']
 
@@ -26,10 +29,14 @@ export class ListProductComponent {
     private productService: ProductService,
     private snackBar: MatSnackBar,
     private router: Router,
-    public dialog: MatDialog) {}
+    public dialog: MatDialog,
+    private apiService: ApiService
+    ) {}
 
   ngOnInit(): void {
     this.getProducts()
+    this.userRoles = this.apiService.getUserRoles();
+    console.log('User Roles:', this.userRoles);
   }
   getProducts(){
     this.productService.getProducts().subscribe((data: Product[]) =>{

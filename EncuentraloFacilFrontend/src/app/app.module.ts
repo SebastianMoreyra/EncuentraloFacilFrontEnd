@@ -18,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthInterceptor } from './helpers/auth.interceptor';
 import { LoginComponent } from './components/login/login.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { InicioComponent } from './components/inicio/inicio.component';
     AddUserComponent,
     AddConsumerComponent,
     LoginComponent,
-    InicioComponent
+    InicioComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
