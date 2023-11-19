@@ -17,7 +17,7 @@ import { ApiService } from 'src/app/services/auth-services/api.service';
 export class ListProductComponent {
   [x: string]: any;
 
-  userRoles: string[] = [];
+  userRoles: string = "";
 
   displayedColumns: string[] = ['id', 'brand','category', 'price','expiration_date', 'actions']
 
@@ -78,7 +78,7 @@ export class ListProductComponent {
   }
 
   delete(
-    id: any
+    id: number
     ) {
       this.productService.deleteProduct(id).subscribe({
       next: (data) => {
@@ -87,7 +87,7 @@ export class ListProductComponent {
           duration: 3000
        })
       this.getProducts()
-      this.router.navigate(['/api/product/list'])
+      this.router.navigate(['/list'])
     },
     error: (err) => {
       console.log(err)

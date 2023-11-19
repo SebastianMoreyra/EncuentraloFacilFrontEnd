@@ -56,7 +56,7 @@ export class AddProductComponent {
     //this._tax = this.myForm.get('price')!.value * 0.18
 
     const product: Product = {
-      id: 0,
+      //id: 0,
       price: this.myForm.get('price')!.value,
       brand: this.myForm.get('brand')!.value,
       category: this.myForm.get('category')!.value,

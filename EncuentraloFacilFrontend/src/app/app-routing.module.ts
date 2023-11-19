@@ -5,6 +5,7 @@ import { AddProductComponent } from './components/Product/add-product/add-produc
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './helpers/auth.guard';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { ListConsumerComponent } from './components/Consumer/list-consumer/list-consumer.component';
 
 const routes: Routes = [
   //{path: 'list', component: ListProductComponent},
@@ -14,7 +15,7 @@ const routes: Routes = [
   {path: 'editProduct/:id', component: AddProductComponent},
   {path: 'auth/login', component: LoginComponent},
   {path: 'Inicio', component: InicioComponent},
-
+  {path: 'listConsumer', component: ListConsumerComponent,canActivate:[AuthGuard]},
 ];
 
 @NgModule({

@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from '../models/Product';
 
+
+//const base_url = "https://backend-encuentralofacil1.onrender.com/api/product"
 const base_url = "http://localhost:8080/api/product"
 //const base_url = "http://localhost:3000/Product"
 @Injectable({
@@ -30,10 +32,12 @@ export class ProductService {
   }
   saveProduct(body: any) {
     const endpoint = `${base_url}/addProduct`;
+    console.log(body)
     return this.http.post<Product>(endpoint, body)
   }
-  deleteProduct(id: any) {
+  deleteProduct(id: number) {
     const endpoint = `${base_url}/delete/${id}`;
+    console.log(id)
     return this.http.delete<Product>(endpoint)
 
   }

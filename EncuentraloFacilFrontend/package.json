@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "backend": "json-server --watch server/data.json",
     "test": "ng test",
-    "target": "http://localhost:8080",
+    "target": "https://backend-encuentralofacil1.onrender.com",
     "secure": false
   },
   "private": true,

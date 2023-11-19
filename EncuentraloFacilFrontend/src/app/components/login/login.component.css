@@ -1,29 +1,75 @@
-
-/* Estilo para el formulario */
-.form-container {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilo para el botón de ingreso */
-.btn-primary {
-  background-color: #1976D2;
-  color: #ffffff;
-}
-
-/* Estilo para el contenedor principal */
-.container {
+CSS
+.container-style {
+  padding: 3rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  flex-direction: column;
 }
 
-/* Ajustes adicionales para el diseño responsivo si es necesario */
-@media (max-width: 600px) {
-  .form-container {
-    max-width: 100%;
-  }
+.form-style {
+  margin: 0 auto;
+  max-width: 25rem;
+  text-align: center;
+}
+
+.form-control {
+  margin: 10px;
+  /* margin: auto; */
+}
+
+.header-style {
+  margin-bottom: 3rem;
+  color: aliceblue;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.button-style {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  background-color: #008037;
+}
+
+span {
+  margin: auto;
+  text-align: center;
+  font-size: larger;
+}
+
+h1 {
+  font-style: bold;
+}
+
+.mat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  /* transform: scale(1.5); */
+  /* width: 300px;
+  height: 200px; */
+  padding: 30px 40px;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #058338;
+  padding: 20px 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* margin-top: 20px; */
+}
+
+.background-image{
+    /* background-image: url('https://img.freepik.com/fotos-premium/seleccion-fuentes-alimentos-ricos-omega-espacio-copia-vista-superior-fondo-madera_106885-3244.jpg'); */
+    /* transform: scale(1.5); */
+    /* background-size: cover; */
+  /* background-position: center; */
 }

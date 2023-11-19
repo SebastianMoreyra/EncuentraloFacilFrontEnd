@@ -1,6 +1,6 @@
 <mat-card>
   <br>
-  <h2>Lista de Productos</h2>
+  <h2>Lista de Clientes</h2>
 
   <!-- <button mat-raised-button style="background-color: #88DC65;" color="primary" [routerLink]="'/addProduct'" >Añadir Producto</button> -->
   <button mat-raised-button style="background-color: #88DC65;" color="primary" [routerLink]="'/addProduct'" *ngIf="userRoles.includes('ADMIN')">Añadir Producto</button>
@@ -12,8 +12,8 @@
    <mat-card-header>
     <div>
       <mat-form-field appearance="fill" class="Buscador">
-        <mat-label>Buscar por Categoría</mat-label>
-        <input matInput #input (keyup)="filterProductbyCategory(input.value)" />
+        <mat-label>Buscar por Nombre</mat-label>
+        <input matInput #input (keyup)="filterConsumerbyName(input.value)" />
       </mat-form-field>
     </div>
   </mat-card-header>
@@ -30,30 +30,12 @@
     </ng-container>
 
     <!-- Name Column -->
-    <ng-container matColumnDef="brand">
-      <th mat-header-cell *matHeaderCellDef> Marca	 </th>
-      <td mat-cell *matCellDef="let element"> {{element.brand}} </td>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Nombre	 </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="category">
-      <th mat-header-cell *matHeaderCellDef> Categoría	 </th>
-      <td mat-cell *matCellDef="let element"> {{element.category}} </td>
-    </ng-container>
-
-    <!-- Price Column -->
-      <ng-container matColumnDef="price">
-        <th mat-header-cell *matHeaderCellDef> Precio	 </th>
-        <td mat-cell *matCellDef="let element"> {{element.price}} </td>
-      </ng-container>
-
-
-    <!-- Tax Column -->
-    <ng-container matColumnDef="expiration_date">
-      <th mat-header-cell *matHeaderCellDef> Fecha de vencimiento </th>
-      <td mat-cell *matCellDef="let element"> {{ element.expiration_date | date:'yyyy-MM-dd' }} </td>
-    </ng-container>
-
-    <!-- Acciones Column -->
+    <!-- Acciones Column
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef>Acciones</th>
       <td mat-cell *matCellDef="let element; let i = index">
@@ -64,7 +46,7 @@
           <mat-icon aria-label="Delete">delete</mat-icon>
         </button>
       </td>
-    </ng-container>
+    </ng-container> -->
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
@@ -78,4 +60,3 @@
 </mat-paginator>
 
 </mat-card>
-
