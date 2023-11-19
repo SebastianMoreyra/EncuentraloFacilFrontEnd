@@ -22,7 +22,7 @@
           <td>{{item.brand}}</td>
           <td>{{item.price | number: '.2'}}</td>
           <td>{{item.quantity}}</td>
-          <td>{{item.price * item.quantity | number: '.2'}}</td>
+          <td>{{item.price! * item.quantity! | number: '.2'}}</td>
         </tr>
       </tbody>
     </table>

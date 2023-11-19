@@ -128,7 +128,7 @@ agregarCarrito(item: Product){
     }
     else {
       let itemCarrito: ItemCarrito = carrito[index];
-      itemCarrito.quantity++;
+      itemCarrito.quantity!++;
       carrito[index] = itemCarrito;
       localStorage.setItem("carrito", JSON.stringify(carrito));
     }
