@@ -20,6 +20,7 @@ import { LoginComponent } from './components/login/login.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { ListConsumerComponent } from './components/Consumer/list-consumer/list-consumer.component';
+import { CarritoComponent } from './components/carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ListConsumerComponent } from './components/Consumer/list-consumer/list-
     LoginComponent,
     InicioComponent,
     DialogComponent,
-    ListConsumerComponent
+    ListConsumerComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,

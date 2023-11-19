@@ -8,6 +8,7 @@ import { Product } from 'src/app/models/Product';
 import { ProductService } from 'src/app/services/product.service';
 import { DialogComponent } from 'src/app/dialog/dialog.component';
 import { ApiService } from 'src/app/services/auth-services/api.service';
+import { ItemCarrito } from 'src/app/models/ItemCarrito';
 
 @Component({
   selector: 'app-list-product',
@@ -67,16 +68,6 @@ export class ListProductComponent {
     this.dataSource.paginator = this.paginator;
   }
 
-  edit(
-    id: number,
-    brand: string,
-    category: string,
-    price: number,
-    expiration_date: string
-  ){
-    console.log('Editando ...')
-  }
-
   delete(
     id: number
     ) {
@@ -105,6 +96,47 @@ showDialog(id:number): void {
         this.delete(id)
       }
     })
+}
+
+agregarCarrito(item: Product){
+  let iCarrito: ItemCarrito = {
+    category: item.category,
+    brand: item.category,
+    price: item.price,
+    expiration_date: item.expiration_date,
+    quantity: 1
+  }
+  if(localStorage.getItem("carrito") === null) {
+    let carrito: ItemCarrito[] = [];
+    carrito.push(iCarrito);
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+  }
+  else{
+    let carritoStorage = localStorage.getItem("carrito") as string;
+    let carrito = JSON.parse(carritoStorage);
+    let index = -1;
+    for(let i = 0; i<carrito.length; i++){
+      let itemC: ItemCarrito = carrito[i];
+      if(iCarrito.brand === itemC.brand){
+        index = i;
+        break;
+      }
+    }
+    if(index === -1){
+      carrito.push(iCarrito);
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+    }
+    else {
+      let itemCarrito: ItemCarrito = carrito[index];
+      itemCarrito.quantity++;
+      carrito[index] = itemCarrito;
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+    }
+
+
+  }
+
+
 }
 
 }
