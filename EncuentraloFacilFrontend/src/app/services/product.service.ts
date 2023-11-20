@@ -18,7 +18,7 @@ export class ProductService {
     return this.http.get<Product[]>(endpoint)
   }
   getProductosById(id: any) {
-    const endpoint = `${base_url}/${id}`;
+    const endpoint = `${base_url}/getById${id}`;
     return this.http.get<Product>(endpoint)
   }
   updateProduct(body: any, id: any) {

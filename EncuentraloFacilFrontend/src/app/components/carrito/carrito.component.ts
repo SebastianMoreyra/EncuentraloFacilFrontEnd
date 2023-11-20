@@ -16,7 +16,8 @@ export class CarritoComponent {
   }
 
   vaciarCarrito(){
-    localStorage.clear();
+    localStorage.removeItem("carrito");
+    //localStorage.clear("carrito");
     this.listaItemsCarrito = [];
   }
 }

@@ -1,7 +1,7 @@
 import { Seller } from "./Seller"
 
 export interface Product {
-  //id: number
+  id: number////////////////
   price: number
   category: string
   brand: string

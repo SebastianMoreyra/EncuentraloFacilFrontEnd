@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: 'auth/login', component: LoginComponent},
   {path: 'Inicio', component: InicioComponent},
   {path: 'listConsumer', component: ListConsumerComponent,canActivate:[AuthGuard]},
-  {path: 'CarritodeCompras', component:CarritoComponent}
+  {path: 'CarritodeCompras', component:CarritoComponent,canActivate:[AuthGuard]}
 ];
 
 @NgModule({

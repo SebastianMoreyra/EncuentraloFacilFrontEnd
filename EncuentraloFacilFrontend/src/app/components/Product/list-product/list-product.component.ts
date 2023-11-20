@@ -98,10 +98,19 @@ showDialog(id:number): void {
     })
 }
 
+getProductById(id:number){
+  this.productService.getProductosById(id);
+}
+
 agregarCarrito(item: Product){
+  console.log(item)
+  this.snackBar.open('Producto añadido al carrito correctamente', '', {
+    duration: 3000
+  })
   let iCarrito: ItemCarrito = {
+    id:item.id,
     category: item.category,
-    brand: item.category,
+    brand: item.brand,
     price: item.price,
     expiration_date: item.expiration_date,
     quantity: 1

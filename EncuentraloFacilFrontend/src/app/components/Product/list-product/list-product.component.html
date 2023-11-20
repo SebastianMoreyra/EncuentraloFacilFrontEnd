@@ -57,7 +57,7 @@
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef>Acciones</th>
       <td mat-cell *matCellDef="let element; let i = index">
-        <button mat-icon-button color="primary" (click)="agregarCarrito(element['item'])">
+        <button mat-icon-button color="primary" (click)="agregarCarrito(element)">
           <mat-icon aria-label="Add">add_shopping_cart</mat-icon>
         </button>
         <button mat-icon-button color="primary" (click)="showDialog(element.id)">

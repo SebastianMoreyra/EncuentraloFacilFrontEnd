@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { DialogComponent } from 'src/app/dialog/dialog.component';
 import { ApiService } from 'src/app/services/auth-services/api.service';
 
 @Component({
@@ -13,7 +15,8 @@ export class NavbarComponent{
 
   constructor(
     private apiService: ApiService,
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog
     ) {
 
      }
@@ -25,6 +28,19 @@ export class NavbarComponent{
      logout(){
       this.apiService.logout()
       this.router.navigate(['auth/login']);
+    }
+
+    showDialognavbar(): void {
+      this.dialog
+        .open(DialogComponent, {
+          data: "¿Deseas cerrar sesión?"
+        })
+        .afterClosed()
+        .subscribe((confirmado: Boolean) => {
+          if (confirmado) {
+            this.logout()
+          }
+        })
     }
 
 
