@@ -38,3 +38,7 @@ tr:hover td{
   background-color: #004d21;
   color: white;
 }
+
+button{
+  margin: 10px auto;
+}
