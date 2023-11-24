@@ -1,0 +1,44 @@
+
+th{
+  background-color: #8ddd6b;
+
+}
+
+body{
+  /* background-color: #058338; */
+  font-family: 'Open Sans', sans-serif;
+}
+
+#main-container{
+  margin: 50px auto;
+  width: 1000px;
+}
+
+table{
+  /* background-color: #058338; */
+  text-align: left;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,td{
+  padding: 20px;
+  border: solid 1px rgb(161, 161, 161);
+}
+
+thead{
+  background-color: white;
+  border-bottom: solid 2px;
+}
+
+tr:nth-child(){
+  background-color: #ddd;
+}
+tr:hover td{
+  background-color: #004d21;
+  color: white;
+}
+
+button{
+  margin: 10px auto;
+}

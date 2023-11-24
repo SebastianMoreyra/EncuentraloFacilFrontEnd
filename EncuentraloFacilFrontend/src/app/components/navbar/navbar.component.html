@@ -3,9 +3,10 @@
     <nav><img src="./assets/logoverde.PNG" alt="logo" class="logo-img"></nav>
     <span>Encuentralo Facil</span>
     <span class="example-spacer"></span>
-    <button mat-raised-button style="background-color: #88DC65;" color="primary" [routerLink]="'/list'">Inicio</button>
-    <button mat-raised-button style="background-color: #88DC65;" color="primary" [routerLink]="'/list'">Comparaciones</button>
-    <button mat-raised-button style="background-color: #88DC65;" color="primary" [routerLink]="'/addAuto'">Cerrar Sesión</button>
+    <button mat-raised-button style="background-color: #88DC65;" color="primary" [routerLink]="'/Inicio'">Inicio</button>
+    <button mat-raised-button style="background-color: #88DC65;" color="primary" [routerLink]="'/list'">Lista de Productos</button>
+    <button mat-raised-button style="background-color: #88DC65;" color="primary" [routerLink]="'/CarritodeCompras'"><mat-icon>shopping_cart</mat-icon>Carrito</button>
+    <button mat-raised-button style="background-color: #88DC65;" color="primary" (click)="showDialognavbar()">Cerrar Sesión</button>
 
   </mat-toolbar-row>
 </mat-toolbar>

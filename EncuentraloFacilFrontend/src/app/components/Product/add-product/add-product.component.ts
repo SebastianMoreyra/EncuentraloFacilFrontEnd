@@ -32,7 +32,10 @@ export class AddProductComponent {
       brand: ['', Validators.required],
       price:  ['', Validators.required],
       category:  ['', Validators.required],
-      expiration_date: ['', Validators.required]
+      expiration_date: ['', Validators.required],
+      seller: this.fb.group({
+        id: ['']
+      })
 
     })
 
@@ -44,6 +47,7 @@ export class AddProductComponent {
         this.myForm.get('brand')!.setValue(data.brand)
         this.myForm.get('category')!.setValue(data.category)
         this.myForm.get('expiration_date')!.setValue(data.expiration_date)
+        this.myForm.get('seller.id')!.setValue(data.seller.id)
       } )
     }
   }
@@ -52,11 +56,14 @@ export class AddProductComponent {
     //this._tax = this.myForm.get('price')!.value * 0.18
 
     const product: Product = {
-      id: 0,
+      id: 0,///////////////////////
       price: this.myForm.get('price')!.value,
       brand: this.myForm.get('brand')!.value,
       category: this.myForm.get('category')!.value,
       expiration_date: this.myForm.get('expiration_date')!.value,
+      seller: {
+        id: 1
+      }
     }
     if (this._id == 0 || this._id == undefined) {
       this.productService.saveProduct(product).subscribe({

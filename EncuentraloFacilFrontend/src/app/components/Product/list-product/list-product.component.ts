@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
 import { Product } from 'src/app/models/Product';
 import { ProductService } from 'src/app/services/product.service';
 import { DialogComponent } from 'src/app/dialog/dialog.component';
+import { ApiService } from 'src/app/services/auth-services/api.service';
+import { ItemCarrito } from 'src/app/models/ItemCarrito';
 
 @Component({
   selector: 'app-list-product',
@@ -15,6 +17,8 @@ import { DialogComponent } from 'src/app/dialog/dialog.component';
 })
 export class ListProductComponent {
   [x: string]: any;
+
+  userRoles: string = "";
 
   displayedColumns: string[] = ['id', 'brand','category', 'price','expiration_date', 'actions']
 
@@ -26,10 +30,14 @@ export class ListProductComponent {
     private productService: ProductService,
     private snackBar: MatSnackBar,
     private router: Router,
-    public dialog: MatDialog) {}
+    public dialog: MatDialog,
+    private apiService: ApiService
+    ) {}
 
   ngOnInit(): void {
     this.getProducts()
+    this.userRoles = this.apiService.getUserRoles();
+    console.log('User Roles:', this.userRoles);
   }
   getProducts(){
     this.productService.getProducts().subscribe((data: Product[]) =>{
@@ -60,18 +68,8 @@ export class ListProductComponent {
     this.dataSource.paginator = this.paginator;
   }
 
-  edit(
-    id: number,
-    brand: string,
-    category: string,
-    price: number,
-    expiration_date: string
-  ){
-    console.log('Editando ...')
-  }
-
   delete(
-    id: any
+    id: number
     ) {
       this.productService.deleteProduct(id).subscribe({
       next: (data) => {
@@ -80,7 +78,7 @@ export class ListProductComponent {
           duration: 3000
        })
       this.getProducts()
-      this.router.navigate(['/api/product/list'])
+      this.router.navigate(['/list'])
     },
     error: (err) => {
       console.log(err)
@@ -98,6 +96,56 @@ showDialog(id:number): void {
         this.delete(id)
       }
     })
+}
+
+getProductById(id:number){
+  this.productService.getProductosById(id);
+}
+
+agregarCarrito(item: Product){
+  console.log(item)
+  this.snackBar.open('Producto añadido al carrito correctamente', '', {
+    duration: 3000
+  })
+  let iCarrito: ItemCarrito = {
+    id:item.id,
+    category: item.category,
+    brand: item.brand,
+    price: item.price,
+    expiration_date: item.expiration_date,
+    quantity: 1
+  }
+  if(localStorage.getItem("carrito") === null) {
+    let carrito: ItemCarrito[] = [];
+    carrito.push(iCarrito);
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+  }
+  else{
+    let carritoStorage = localStorage.getItem("carrito") as string;
+    let carrito = JSON.parse(carritoStorage);
+    let index = -1;
+    for(let i = 0; i<carrito.length; i++){
+      let itemC: ItemCarrito = carrito[i];
+      if(iCarrito.brand === itemC.brand){
+        index = i;
+        break;
+      }
+    }
+    if(index === -1){
+      carrito.push(iCarrito);
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+    }
+    else {
+      let itemCarrito: ItemCarrito = carrito[index];
+      itemCarrito.quantity!++;
+      carrito[index] = itemCarrito;
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+    }
+
+
+  }
+
+
 }
 
 }

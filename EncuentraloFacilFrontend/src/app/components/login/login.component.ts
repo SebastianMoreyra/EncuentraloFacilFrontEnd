@@ -31,4 +31,9 @@ export class LoginComponent {
 
     })
   }
+
+  logout(form: NgForm){
+    console.log ('form value', form.value);
+    this.apiService.logout()
+  }
 }

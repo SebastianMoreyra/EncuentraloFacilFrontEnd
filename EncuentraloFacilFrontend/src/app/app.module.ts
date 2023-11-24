@@ -17,6 +17,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthInterceptor } from './helpers/auth.interceptor';
 import { LoginComponent } from './components/login/login.component';
+import { InicioComponent } from './components/inicio/inicio.component';
+import { DialogComponent } from './dialog/dialog.component';
+import { ListConsumerComponent } from './components/Consumer/list-consumer/list-consumer.component';
+import { CarritoComponent } from './components/carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import { LoginComponent } from './components/login/login.component';
     AddProductComponent,
     AddUserComponent,
     AddConsumerComponent,
-    LoginComponent
+    LoginComponent,
+    InicioComponent,
+    DialogComponent,
+    ListConsumerComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,

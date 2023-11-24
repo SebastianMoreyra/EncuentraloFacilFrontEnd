@@ -19,3 +19,7 @@ ul li {
 .buscador {
   font-size: small;
 }
+
+.bi-basket{
+  cursor: pointer;
+}
